@@ -2,14 +2,14 @@ package dataAccess.course;
 
 import entities.Course;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JdbcCourseDao implements CourseDao{
-    List<Course> courses;
+    List<Course> courses = new ArrayList<>();
 
-    public JdbcCourseDao(List<Course> courses) {
+    public JdbcCourseDao() {
         System.out.println("JDBS: ");
-        this.courses = courses;
     }
 
     @Override

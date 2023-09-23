@@ -2,14 +2,15 @@ package dataAccess.instructor;
 
 import entities.Instructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JdbcInstructorDao implements InstructorDao{
-    List<Instructor> instructors;
+    List<Instructor> instructors = new ArrayList<>();
 
-    public JdbcInstructorDao(List<Instructor> instructors) {
+    public JdbcInstructorDao() {
         System.out.println("JDBC: ");
-        this.instructors = instructors;
+
     }
 
     @Override

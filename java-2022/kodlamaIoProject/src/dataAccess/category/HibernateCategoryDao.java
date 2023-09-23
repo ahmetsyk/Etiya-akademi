@@ -3,15 +3,15 @@ package dataAccess.category;
 import entities.Category;
 import entities.Instructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HibernateCategoryDao implements CategoryDao{
 
-    List<Category> categories;
+    List<Category> categories =new ArrayList<>();
 
-    public HibernateCategoryDao(List<Category> categories) {
+    public HibernateCategoryDao() {
         System.out.println("Hibernate: ");
-        this.categories = categories;
     }
 
     @Override

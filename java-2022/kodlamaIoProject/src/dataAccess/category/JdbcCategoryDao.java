@@ -2,15 +2,15 @@ package dataAccess.category;
 
 import entities.Category;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JdbcCategoryDao implements CategoryDao{
 
-    List<Category> categories;
+    List<Category> categories = new ArrayList<>();
 
-    public JdbcCategoryDao(List<Category> categories) {
+    public JdbcCategoryDao() {
         System.out.println("JDBC: ");
-        this.categories = categories;
     }
 
     @Override

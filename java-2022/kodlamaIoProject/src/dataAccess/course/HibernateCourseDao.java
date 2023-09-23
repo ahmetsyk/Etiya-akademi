@@ -3,14 +3,15 @@ package dataAccess.course;
 import entities.Course;
 import entities.Instructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HibernateCourseDao implements CourseDao {
-    List<Course> courses;
+    List<Course> courses = new ArrayList<>();
 
-    public HibernateCourseDao(List<Course> courses) {
+    public HibernateCourseDao() {
         System.out.println("Hibernate: ");
-        this.courses = courses;
+
     }
 
     @Override

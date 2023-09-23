@@ -11,8 +11,7 @@ public class CategoryManager {
     private CategoryDao categoryDao;
     private Logger[] loggers;
 
-    public CategoryManager(Category category, CategoryDao categoryDao, Logger[] loggers) {
-        this.category = category;
+    public CategoryManager( CategoryDao categoryDao, Logger[] loggers) {
         this.categoryDao = categoryDao;
         this.loggers = loggers;
     }

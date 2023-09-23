@@ -2,14 +2,14 @@ package dataAccess.instructor;
 
 import entities.Instructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HibernateInstructorDao implements InstructorDao{
-    List<Instructor> instructors;
+    List<Instructor> instructors = new ArrayList<>();
 
-    public HibernateInstructorDao(List<Instructor> instructors) {
+    public HibernateInstructorDao() {
         System.out.println("Hibernate: ");
-        this.instructors = instructors;
     }
 
     @Override
