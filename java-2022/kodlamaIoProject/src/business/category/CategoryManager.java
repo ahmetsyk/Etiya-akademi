@@ -2,12 +2,9 @@ package business.category;
 
 import core.logging.Logger;
 import dataAccess.category.CategoryDao;
-import dataAccess.course.CourseDao;
 import entities.Category;
-import entities.Course;
 
 public class CategoryManager {
-    private Category category;
     private CategoryDao categoryDao;
     private Logger[] loggers;
 
@@ -17,12 +14,14 @@ public class CategoryManager {
     }
 
     public void add(Category category){
-        if (category.getCategoryName()==categoryDao.getById(category.getCategoryId()).getCategoryName()){
-            System.out.println("Aynı isimde kategori eklenemez.");
+        for (Category category1: categoryDao.getAll()){
+            if (category.getCategoryName()==category1.getCategoryName()){
+                System.out.println("Aynı isimde kategori eklenemez.");
         }else
             categoryDao.add(category);
             log("Kategori eklendi");
 
+    }
     }
 
     public void delete(Category category){

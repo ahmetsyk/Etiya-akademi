@@ -29,6 +29,16 @@ public class JdbcInstructorDao implements InstructorDao{
     }
 
     public Instructor getById(int id){
-        return instructors.get(id);
+        for (Instructor instructor:instructors){
+            if (instructor.getId()==id){
+                return instructor;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public List<Instructor> getAll() {
+        return instructors;
     }
 }

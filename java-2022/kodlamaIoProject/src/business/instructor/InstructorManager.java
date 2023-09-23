@@ -5,7 +5,6 @@ import dataAccess.instructor.InstructorDao;
 import entities.Instructor;
 
 public class InstructorManager {
-    private Instructor instructor;
     private InstructorDao instructorDao;
     private Logger[] loggers;
 
@@ -14,12 +13,16 @@ public class InstructorManager {
         this.loggers = loggers;
     }
     public void add(Instructor instructor){
-        if (instructor.getFirstName()==instructorDao.getById(instructor.getId()).getFirstName()){
-            System.out.println("Aynı isimde eğitmen eklenemez.");
-        }else
-            instructorDao.add(instructor);
-            log(" Eğitmen eklendi.");
+        for (Instructor instructor1: instructorDao.getAll()){
+            if (instructor.equals(instructor1)){
 
+                    System.out.println("Aynı isimde eğitmen eklenemez.");
+                }
+            else{
+                instructorDao.add(instructor);
+                log(" Eğitmen eklendi.");
+            }
+    }
     }
 
     public void delete(Instructor instructor){

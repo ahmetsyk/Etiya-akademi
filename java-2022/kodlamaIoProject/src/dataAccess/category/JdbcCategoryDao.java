@@ -30,6 +30,16 @@ public class JdbcCategoryDao implements CategoryDao{
 
     @Override
     public Category getById(int id) {
-        return categories.get(id);
+        for (Category category: categories){
+        if (category.getCategoryId()==id){
+            return  category;
+        }
+    }
+        return null;
+    }
+
+    @Override
+    public List<Category> getAll() {
+        return categories;
     }
 }

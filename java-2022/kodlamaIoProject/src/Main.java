@@ -11,8 +11,6 @@ import entities.Category;
 import entities.Course;
 import entities.Instructor;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -42,14 +40,12 @@ public class Main {
         course.setCourseCategory(category1);
         course.setCourseInstructor(instructor);
 
-
         Course course2 = new Course();
         course2.setCourseId(2);
         course2.setCourseName("C#");
         course2.setCoursePrice(-20);
         course2.setCourseCategory(category1);
         course2.setCourseInstructor(instructor);
-
 
         Course course3 = new Course();
         course3.setCourseId(3);
@@ -65,19 +61,14 @@ public class Main {
         course4.setCourseCategory(category2);
         course4.setCourseInstructor(instructor2);
 
-
         Logger[] loggers = new Logger[]{new FileLogger(), new DatebaseLogger()};
 
         CourseManager courseManager = new CourseManager(new JdbcCourseDao(),loggers);
         courseManager.add(course);
         courseManager.add(course2);
-        courseManager.add(course2);
         courseManager.add(course3);
-        courseManager.update(course4);
-        courseManager.delete(course4);
 
         CategoryManager categoryManager = new CategoryManager(new HibernateCategoryDao(),loggers);
-        categoryManager.add(category1);
         categoryManager.add(category1);
         categoryManager.add(category2);
 

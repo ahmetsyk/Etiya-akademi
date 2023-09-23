@@ -3,10 +3,8 @@ package business.course;
 import core.logging.Logger;
 import dataAccess.course.CourseDao;
 import entities.Course;
-import entities.Instructor;
 
 public class CourseManager {
-    private Course course;
     private CourseDao courseDao;
     private Logger[] loggers;
 
@@ -16,12 +14,18 @@ public class CourseManager {
         this.loggers = loggers;
     }
     public void add(Course course){
-        if (course.getCourseName()==courseDao.getById(course.getCourseId()).getCourseName() && course.getCoursePrice()<0){
-            System.out.println("Kurs eklenemez.");
+        for (Course course1: courseDao.getAll()){
+            if (course.getCourseName()==course1.getCourseName()){
+                System.out.println("Kurs ismi aynı olamaz");
+            }
+        }
+        if (course.getCoursePrice()<0){
+            System.out.println("Kurs fiyatı 0'dan küçükolamaz.");
         }else
+       {
             courseDao.add(course);
             log(" Kurs eklendi");
-
+        }
     }
 
     public void delete(Course course){

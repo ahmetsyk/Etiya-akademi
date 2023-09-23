@@ -1,11 +1,9 @@
 package dataAccess.course;
-
 import entities.Course;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class JdbcCourseDao implements CourseDao{
+public class JdbcCourseDao implements CourseDao {
     List<Course> courses = new ArrayList<>();
 
     public JdbcCourseDao() {
@@ -29,7 +27,18 @@ public class JdbcCourseDao implements CourseDao{
 
     @Override
     public Course getById(int id) {
-        return courses.get(id);
+        for (Course course:courses){
+            if(course.getCourseId()==id){
+                return course;
+            }
+        }
+        return null;
     }
+
+    @Override
+    public List<Course> getAll() {
+        return courses;
+    }
+
 
 }

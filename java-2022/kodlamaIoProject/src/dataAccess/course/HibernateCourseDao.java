@@ -1,7 +1,6 @@
 package dataAccess.course;
 
 import entities.Course;
-import entities.Instructor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +30,16 @@ public class HibernateCourseDao implements CourseDao {
 
     @Override
     public Course getById(int id) {
-       return courses.get(id);
+       for (Course course:courses){
+           if (course.getCourseId()==id){
+               return  course;
+           }
+       }
+       return null;
+    }
+
+    @Override
+    public List<Course> getAll() {
+        return courses;
     }
 }
