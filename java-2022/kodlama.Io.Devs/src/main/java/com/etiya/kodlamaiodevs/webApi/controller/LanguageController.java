@@ -22,7 +22,7 @@ public class LanguageController {
         return languageService.getAll();
     }
 
-    @PutMapping("/employees/{id}")
+    @PutMapping("/languages/{id}")
     void update(@RequestBody Language language, @PathVariable int id) {
         languageService.update(language, id );
     }

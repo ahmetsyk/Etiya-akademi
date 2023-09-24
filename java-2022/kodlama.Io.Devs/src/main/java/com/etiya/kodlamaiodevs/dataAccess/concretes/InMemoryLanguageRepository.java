@@ -12,6 +12,9 @@ public class InMemoryLanguageRepository implements LanguageRepository {
     List<Language> languages;
     public InMemoryLanguageRepository() {
         languages = new ArrayList<Language>();
+        languages.add(new Language(1,"Java"));
+        languages.add(new Language(2,"C#"));
+        languages.add(new Language(3,"JavaScript"));
 
     }
     @Override
