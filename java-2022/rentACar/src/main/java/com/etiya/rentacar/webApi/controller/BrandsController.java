@@ -1,11 +1,10 @@
 package com.etiya.rentacar.webApi.controller;
 
 import com.etiya.rentacar.business.abstracts.BrandService;
-import com.etiya.rentacar.entities.concretes.Brand;
+import com.etiya.rentacar.business.requests.CreateBrandRequest;
+import com.etiya.rentacar.business.responses.GetAllBrandsResponce;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,7 +19,12 @@ public class BrandsController {
     }
 
     @GetMapping("/getall")
-    public List<Brand> getAll(){
+    public List<GetAllBrandsResponce> getAll(){
         return brandService.getAll();
+    }
+
+    @PostMapping("/add")
+    public void add(@RequestBody CreateBrandRequest createBrandRequest){
+        this.brandService.add(createBrandRequest);
     }
 }
