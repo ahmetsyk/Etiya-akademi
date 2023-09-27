@@ -1,12 +1,12 @@
 package com.etiya.rentacar.business.abstracts;
 
 import com.etiya.rentacar.business.requests.CreateBrandRequest;
-import com.etiya.rentacar.business.responses.GetAllBrandsResponce;
+import com.etiya.rentacar.business.responses.GetAllBrandsResponse;
 
 import java.util.List;
 
 public interface BrandService {
-    List<GetAllBrandsResponce> getAll();
+    List<GetAllBrandsResponse> getAll();
 
     void add(CreateBrandRequest createBrandRequest);
 }

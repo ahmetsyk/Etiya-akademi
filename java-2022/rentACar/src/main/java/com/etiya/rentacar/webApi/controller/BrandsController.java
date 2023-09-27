@@ -2,7 +2,7 @@ package com.etiya.rentacar.webApi.controller;
 
 import com.etiya.rentacar.business.abstracts.BrandService;
 import com.etiya.rentacar.business.requests.CreateBrandRequest;
-import com.etiya.rentacar.business.responses.GetAllBrandsResponce;
+import com.etiya.rentacar.business.responses.GetAllBrandsResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +19,7 @@ public class BrandsController {
     }
 
     @GetMapping("/getall")
-    public List<GetAllBrandsResponce> getAll(){
+    public List<GetAllBrandsResponse> getAll(){
         return brandService.getAll();
     }
 

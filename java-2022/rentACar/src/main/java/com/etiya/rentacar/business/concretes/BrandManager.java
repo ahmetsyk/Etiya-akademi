@@ -2,7 +2,7 @@ package com.etiya.rentacar.business.concretes;
 
 import com.etiya.rentacar.business.abstracts.BrandService;
 import com.etiya.rentacar.business.requests.CreateBrandRequest;
-import com.etiya.rentacar.business.responses.GetAllBrandsResponce;
+import com.etiya.rentacar.business.responses.GetAllBrandsResponse;
 import com.etiya.rentacar.dataAccess.abstracts.BrandRepository;
 import com.etiya.rentacar.entities.concretes.Brand;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +23,11 @@ public class BrandManager implements BrandService {
     }
 
     @Override
-    public List<GetAllBrandsResponce> getAll() {
+    public List<GetAllBrandsResponse> getAll() {
         List<Brand> brands = brandRepository.findAll();
-        List<GetAllBrandsResponce> brandsResponse = new ArrayList<GetAllBrandsResponce>();
+        List<GetAllBrandsResponse> brandsResponse = new ArrayList<GetAllBrandsResponse>();
         for (Brand brand:brands){
-            GetAllBrandsResponce responseItem = new GetAllBrandsResponce();
+            GetAllBrandsResponse responseItem = new GetAllBrandsResponse();
             responseItem.setId(brand.getId());
             responseItem.setName(brand.getName());
             brandsResponse.add(responseItem);

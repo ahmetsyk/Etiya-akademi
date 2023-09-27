@@ -1,4 +1,4 @@
-package com.etiya.rentacar.business.requests;
+package com.etiya.kodlamaiodevs.business.responses;
 
 import lombok.*;
 
@@ -7,6 +7,6 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
-public class CreateBrandRequest {
+public class GetAllLanguagesResponse {
     private String name;
 }

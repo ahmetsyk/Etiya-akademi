@@ -1,6 +1,7 @@
 package com.etiya.kodlamaiodevs.dataAccess.abstracts;
 
 import com.etiya.kodlamaiodevs.entities.concretes.Language;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 

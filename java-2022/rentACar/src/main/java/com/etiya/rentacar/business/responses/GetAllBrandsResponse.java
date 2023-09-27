@@ -1,13 +1,13 @@
 package com.etiya.rentacar.business.responses;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetAllBrandsResponce {
+@Getter
+@Setter
+public class GetAllBrandsResponse {
     private int id;
     private String name;
 }
