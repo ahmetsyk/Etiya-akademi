@@ -1,23 +1,22 @@
 package com.etiya.rentacar.entities.concretes;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-
-@Table(name="brands")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "colors")
 @Entity
-public class Brand{
+public class BrandColor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
-
 }
-
-//NationalId

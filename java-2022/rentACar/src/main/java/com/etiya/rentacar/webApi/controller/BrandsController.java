@@ -33,7 +33,7 @@ public class BrandsController {
     }
     @PutMapping()
     public void update(@RequestBody UpdateBrandRequest updateBrandRequest){
-        this.update(updateBrandRequest);
+        this.brandService.update(updateBrandRequest);
     }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable int id){
