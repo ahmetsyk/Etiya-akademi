@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetAllBrandColorResponse {
+public class GetByIdCarColorResponse {
     private int id;
     private String name;
 }

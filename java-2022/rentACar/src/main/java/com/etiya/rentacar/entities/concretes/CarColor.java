@@ -5,18 +5,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "colors")
 @Entity
-public class BrandColor {
+public class CarColor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "colorName")
     private String name;
+
+    @OneToMany(mappedBy = "color")
+    private List<Car> cars;
 }

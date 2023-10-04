@@ -1,10 +1,9 @@
 package com.etiya.rentacar.dataAccess.abstracts;
 
-import com.etiya.rentacar.entities.concretes.Model;
+import com.etiya.rentacar.entities.concretes.CarColor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ModelRepository extends JpaRepository<Model,Integer> {
-    boolean existsByName(String name);
+public interface CarColorRepository extends JpaRepository<CarColor,Integer> {
 }

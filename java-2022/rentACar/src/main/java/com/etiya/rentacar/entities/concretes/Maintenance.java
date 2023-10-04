@@ -5,26 +5,31 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.util.Date;
 
-@Table(name = "models")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "maintenances")
 @Entity
-public class Model {
+public class Maintenance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "sendDate")
+    private Date sendDate;
+
+    @Column(name = "returnDate")
+    private Date returnDate;
+
+//    @Column(name = "repairPrice")
+//    private double repairPrice;
 
     @ManyToOne
-    @JoinColumn(name = "brandId")
-    private Brand brand;
+    @JoinColumn(name = "carId")
+    private Car car;
 
-    @OneToMany(mappedBy = "model")
-    private List<Car> cars;
-}
+    }
+

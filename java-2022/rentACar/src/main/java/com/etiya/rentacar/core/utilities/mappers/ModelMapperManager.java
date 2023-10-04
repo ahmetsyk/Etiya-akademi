@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 public class ModelMapperManager implements ModelMapperService{
 
     private ModelMapper modelMapper;
+
     @Override
     public ModelMapper forResponse() {
         this.modelMapper.getConfiguration()

@@ -1,9 +1,13 @@
 package com.etiya.rentacar.entities.concretes;
 
+import com.etiya.rentacar.core.utilities.enums.States;
 import jakarta.persistence.*;
+import jdk.dynalink.linker.LinkerServices;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Table(name = "cars")
 @Data
@@ -25,10 +29,21 @@ public class Car {
     @Column(name = "modelYear")
     private int modelYear;
 
+    @Enumerated(EnumType.ORDINAL)
     @Column(name = "state")     //1-available 2-rented 3-maintenance
-    private int state;
+    private States state;
 
     @ManyToOne
     @JoinColumn(name = "modelId")
-    private Model modelId;
+    private Model model;
+
+    @OneToMany(mappedBy = "car" )
+    private List<Maintenance> maintenances;
+
+    @OneToMany(mappedBy = "car")
+    private List<Rental> rentals;
+
+    @ManyToOne
+    @JoinColumn(name = "colorId")
+    private CarColor color;
 }

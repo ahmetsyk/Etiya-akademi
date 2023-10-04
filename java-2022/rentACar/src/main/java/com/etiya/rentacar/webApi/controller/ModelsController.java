@@ -2,7 +2,6 @@ package com.etiya.rentacar.webApi.controller;
 
 import com.etiya.rentacar.business.abstracts.ModelService;
 import com.etiya.rentacar.business.requests.CreateModelRequest;
-import com.etiya.rentacar.business.requests.UpdateBrandRequest;
 import com.etiya.rentacar.business.requests.UpdateModelRequest;
 import com.etiya.rentacar.business.responses.GetAllModelsResponse;
 import com.etiya.rentacar.business.responses.GetByIdModelResponse;
